@@ -1,23 +1,20 @@
-/* Add your custom styles here */
-
-/* Container for the image gallery */
+/*Gallery*/
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four columns */
-    gap: 0 10px; /* Gap between items, 10px horizontal gap */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 10px; 
 }
 
-/* Style for individual image */
 .gallery-item {
-    margin-bottom: 10px; /* 10px margin at the bottom of each image */
+    margin-bottom: 10px;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto; /* Maintain image's natural size */
+    height: auto;
     display: block;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease-in-out;
 }
 
@@ -25,14 +22,12 @@
     transform: scale(1.05);
 }
 
-/* Responsive layout for smaller screens */
 @media (max-width: 600px) {
     .gallery-container {
-        grid-template-columns: repeat(1, 1fr); /* One column for screens below 600px */
-        gap: 10px 0; /* Reduce gap for smaller screens, 10px vertical gap */
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px 0;
     }
 }
-
 
 
   /* Modal styles */
@@ -56,6 +51,8 @@
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
   }
   
   .close {
@@ -65,12 +62,24 @@
     font-weight: bold;
     cursor: pointer;
   }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+
+  .craft-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.craft-image {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: row;
+}
+
+.supplies-title {
+    font-weight: bold;
+}
   
   
