@@ -1,6 +1,9 @@
-body{
+/*General*/
+body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/*Gallery*/
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -33,7 +36,7 @@ body{
 
 
 
-/* Modal styles */
+/* Modal*/
 .modal {
   display: none;
   position: fixed;
@@ -54,16 +57,17 @@ body{
   width: 80%;
   max-width: 600px;
   border-radius: 10px;
-  display: flex; /* Add flex display */
+  display: flex;
 }
 
 .modal-image {
-  width: 100px; /* Adjust width of the image */
-  margin-right: 20px; /* Add margin to the right */
+  width: 50px;
+  height:50px;
+  margin-right: 20px;
 }
 
 .modal-details {
-  flex-grow: 1; /* Allow details to take remaining space */
+  flex-grow: 1;
 }
 
 .close {
