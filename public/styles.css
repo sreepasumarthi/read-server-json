@@ -36,6 +36,7 @@ body {
 
 
 /* Modal*/
+/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -54,18 +55,20 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 800px; 
+  max-width: 800px; /* Increase max-width for longer modal */
   border-radius: 10px;
-  display: flex;
+  display: flex; /* Add flex display */
 }
 
 .modal-image {
-  width: 150px; 
-  margin-right: 20px; 
+  flex-shrink: 0; /* Prevent image from shrinking */
+  width: 150px; /* Adjust width of the image */
+  margin-right: 20px; /* Add margin to the right */
 }
 
 .modal-details {
-  margin-left:30px;
+  flex-grow: 1; /* Allow details to take remaining space */
+  padding-left: 20px; /* Add padding to the left */
 }
 
 .close {
@@ -82,3 +85,4 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
