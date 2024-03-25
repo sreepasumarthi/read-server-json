@@ -16,12 +16,11 @@ const showCrafts = async () => {
       return;
     }
   
-    // Create a container for the gallery
+
     const galleryContainer = document.createElement("div");
     galleryContainer.classList.add("gallery-container");
     craftsDiv.appendChild(galleryContainer);
   
-    // Loop through the JSON and create gallery items
     craftsJSON.forEach((craft) => {
       const galleryItem = document.createElement("div");
       galleryItem.classList.add("gallery-item");
@@ -35,29 +34,28 @@ const showCrafts = async () => {
     });
   };
   
-  // Function to open the modal with craft information
   const openModal = (craft) => {
     const modal = document.getElementById("myModal");
     const modalTitle = document.getElementById("modal-title");
     const modalDescription = document.getElementById("modal-description");
     const modalSupplies = document.getElementById("modal-supplies");
+    const modalImage = document.getElementById("modal-image");
   
-    modalTitle.textContent = craft.name;
+    modalTitle.innerHTML = `<strong>${craft.name}</strong>`;
     modalDescription.textContent = craft.description;
   
-    // Clear previous supplies
-    modalSupplies.innerHTML = "";
-  
-    // Populate supplies as list items
+    modalSupplies.innerHTML = "<strong>Supplies:</strong>";
     craft.supplies.forEach((supply) => {
       const listItem = document.createElement("li");
       listItem.textContent = supply;
       modalSupplies.appendChild(listItem);
     });
   
+    modalImage.src = "https://read-server-json-1.onrender.com/" + craft.img;
+    modalImage.alt = craft.name;
+  
     modal.style.display = "block";
   
-    // Close the modal when the close button or outside modal area is clicked
     const closeModal = () => {
       modal.style.display = "none";
     };
@@ -71,6 +69,7 @@ const showCrafts = async () => {
       }
     });
   };
+  
   
   showCrafts();
   
