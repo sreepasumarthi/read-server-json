@@ -36,7 +36,6 @@ body {
 
 
 /* Modal*/
-/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -55,20 +54,23 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 800px; /* Increase max-width for longer modal */
+  max-width: 800px;
   border-radius: 10px;
-  display: flex; /* Add flex display */
+}
+
+.modal-content-wrapper {
+  display: flex;
+  justify-content: space-between; 
 }
 
 .modal-image {
-  flex-shrink: 0; /* Prevent image from shrinking */
-  width: 150px; /* Adjust width of the image */
-  margin-right: 20px; /* Add margin to the right */
+  flex-shrink: 0;
+  width: 150px;
+  margin-right: 20px;
 }
 
 .modal-details {
-  flex-grow: 1; /* Allow details to take remaining space */
-  padding-left: 20px; /* Add padding to the left */
+  flex-grow: 1;
 }
 
 .close {
