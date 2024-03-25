@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <link rel="stylesheet" href="styles.css" />
+
+
 </head>
+
 
 <body>
     <h1>Buy & Sell Crafts</h1>
-    <div class="gallery-container">
-        <div class="column">
-            <div class="gallery-item">
-                <img src="image1.jpg" alt="Craft 1">
-            </div>
-            <div class="gallery-item">
-                <img src="image2.jpg" alt="Craft 2">
-            </div>
-            <!-- Add more images as needed -->
-        </div>
-        <div class="column">
-            <!-- Add more images as needed -->
-        </div>
-        <div class="column">
-            <!-- Add more images as needed -->
-        </div>
-        <div class="column">
-            <!-- Add more images as needed -->
-        </div>
-    </div>
+    <div id="crafts-div"></div>
+    <script src="script.js"></script>
 </body>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <ul id="modal-supplies"></ul>
+    </div>
+  </div>
+  
 
 </html>

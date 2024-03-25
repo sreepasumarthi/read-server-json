@@ -2,33 +2,37 @@
 
 /* Container for the image gallery */
 .gallery-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Column layout */
-.column {
-    flex: 1; /* Each column takes equal space */
-    margin: 0 10px; /* Add spacing between columns */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 0 10px; /* Gap between items, 10px horizontal gap */
 }
 
 /* Style for individual image */
 .gallery-item {
-    margin-bottom: 20px; /* Add space between images vertically */
+    margin-bottom: 10px; /* 10px margin at the bottom of each image */
 }
 
 .gallery-item img {
-    width: 100%; /* Ensure images fill the container */
+    width: 100%;
     height: auto; /* Maintain image's natural size */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
     transition: transform 0.3s ease-in-out;
 }
 
-.gallery-item img:hover {
+.gallery-item:hover img {
     transform: scale(1.05);
 }
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr); /* One column for screens below 600px */
+        gap: 10px 0; /* Reduce gap for smaller screens, 10px vertical gap */
+    }
+}
+
 
 
   /* Modal styles */
