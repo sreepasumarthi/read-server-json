@@ -24,17 +24,6 @@ const showCrafts = async() => {
         const section = document.createElement("section");
         craftsDiv.append(section);
 
-
-        const h2 = document.createElement("h3");
-        h2.innerHTML = craft.name;
-        section.append(h2);
-
-
-        const h3 = document.createElement("h3");
-        h3.innerHTML = craft.description;
-        section.append(h3);
-
-
         const img = document.createElement("img");
         img.src = "https://read-server-json-1.onrender.com/"+ craft.img;
         section.append(img);
