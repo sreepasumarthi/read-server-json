@@ -1,6 +1,6 @@
 const getCrafts = async() => {
     try {
-        return (await fetch("http://localhost:3030/api/crafts")).json();
+        return (await fetch("https://read-server-json-1.onrender.com/api/crafts")).json();
     } catch(error){
         console.log("error retrieving data");
         return "";
@@ -36,7 +36,7 @@ const showCrafts = async() => {
 
 
         const img = document.createElement("img");
-        img.src = "/"+ craft.img;
+        img.src = "https://read-server-json-1.onrender.com/"+ craft.img;
         section.append(img);
     });
 };
