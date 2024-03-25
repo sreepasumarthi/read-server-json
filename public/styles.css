@@ -3,8 +3,8 @@
 /* Container for the image gallery */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Initial display with 4 columns */
-    gap: 20px 0; /* Gap between items, 20px vertical gap */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Gap between items */
 }
 
 /* Style for individual image */
@@ -12,11 +12,13 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 200px; /* Fixed height for each grid item */
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto; /* Maintain image's natural size */
+    height: 100%; /* Ensure the image fills the grid item */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire grid item */
     display: block;
     transition: transform 0.3s ease-in-out;
 }
@@ -29,10 +31,13 @@
 @media (max-width: 600px) {
     .gallery-container {
         grid-template-columns: repeat(1, 1fr); /* One column for screens below 600px */
-        gap: 10px 0; /* Reduce gap for smaller screens, 10px vertical gap */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+    
+    .gallery-item {
+        height: 100px; /* Reduce height for smaller screens */
     }
 }
-
 
 
   /* Modal styles */
