@@ -27,28 +27,6 @@ body {
   transform: scale(1.05);
 }
 
-/*For Responsiveness*/
-
-@media (max-width: 900px) {
-  .gallery-container {
-      grid-template-columns: repeat(3, 1fr); /* Change to 3 columns on smaller screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery-container {
-      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on even smaller screens */
-  }
-}
-
-@media (max-width: 400px) {
-  .gallery-container {
-      grid-template-columns: repeat(1, 1fr); /* Change to 1 column on the smallest screens */
-  }
-}
-
-
-
 /* Modal*/
 .modal {
   display: none;
