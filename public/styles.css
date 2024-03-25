@@ -71,7 +71,7 @@ body {
 
 .modal-details {
   flex-grow: 1;
-  padding-left:50px;
+  padding-left:100px;
 }
 
 .close {
