@@ -30,7 +30,7 @@
 /* Responsive layout for smaller screens */
 @media (max-width: 600px) {
     .gallery-container {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust columns for smaller screens */
+        grid-template-columns: repeat(1, 1fr); /* One column for screens below 600px */
         gap: 10px; /* Reduce gap for smaller screens */
     }
     
