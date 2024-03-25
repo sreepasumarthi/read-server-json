@@ -6,12 +6,12 @@ body {
 /*Gallery*/
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust min and max width as needed */
+  gap: 20px;
 }
 
 .gallery-item {
-  margin-bottom: 10px;
+  width: 100%; /* Ensure items take full width of their container */
 }
 
 .gallery-item img {
