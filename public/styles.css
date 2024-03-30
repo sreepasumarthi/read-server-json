@@ -5,9 +5,15 @@ body {
 
 /* Gallery */
 .gallery-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  display: flex;
   gap: 20px;
+}
+
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
 }
 
 .gallery-item {
@@ -30,19 +36,19 @@ body {
 /* For Responsiveness */
 @media (max-width: 900px) {
   .gallery-container {
-    grid-template-columns: repeat(3, 1fr);
+      flex-wrap: wrap;
   }
 }
 
 @media (max-width: 600px) {
   .gallery-container {
-    grid-template-columns: repeat(2, 1fr);
+      flex-direction: column;
   }
 }
 
 @media (max-width: 500px) {
-  .gallery-container {
-    grid-template-columns: repeat(1, 1fr);
+  .gallery-column {
+      flex-basis: 100%;
   }
 }
 

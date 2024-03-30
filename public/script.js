@@ -16,29 +16,32 @@ const showCrafts = async () => {
     return;
   }
 
-  const columns = Array.from({ length: 4 }, () => []);
+  // Create four columns
+  for (let i = 0; i < 4; i++) {
+    const column = document.createElement("div");
+    column.classList.add("gallery-column");
+    craftsDiv.appendChild(column);
+  }
 
+  // Select all columns
+  const columns = document.querySelectorAll(".gallery-column");
+
+  // Distribute crafts evenly among the columns
+  let columnIndex = 0;
   craftsJSON.forEach((craft, index) => {
-    const columnIndex = index % 4;
-    columns[columnIndex].push(craft);
-  });
+    const galleryItem = document.createElement("div");
+    galleryItem.classList.add("gallery-item");
+    galleryItem.addEventListener("click", () => openModal(craft));
 
-  columns.forEach((column, columnIndex) => {
-    const galleryContainer = document.createElement("div");
-    galleryContainer.classList.add("gallery-container");
-    craftsDiv.appendChild(galleryContainer);
+    const img = document.createElement("img");
+    img.src = "https://read-server-json-1.onrender.com/" + craft.img;
+    img.alt = craft.name;
 
-    column.forEach((craft) => {
-      const galleryItem = document.createElement("div");
-      galleryItem.classList.add("gallery-item");
-      galleryContainer.appendChild(galleryItem);
+    galleryItem.appendChild(img);
+    columns[columnIndex].appendChild(galleryItem);
 
-      const img = document.createElement("img");
-      img.src = "https://read-server-json-1.onrender.com/" + craft.img;
-      img.alt = craft.name;
-      img.addEventListener("click", () => openModal(craft));
-      galleryItem.appendChild(img);
-    });
+    // Move to the next column
+    columnIndex = (columnIndex + 1) % 4;
   });
 };
 
