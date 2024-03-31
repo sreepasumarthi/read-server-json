@@ -1,5 +1,3 @@
-
-/*Get Crafts*/
 const getCrafts = async () => {
   try {
     return (await fetch("https://read-server-json-1.onrender.com/api/crafts")).json();
@@ -9,7 +7,41 @@ const getCrafts = async () => {
   }
 };
 
-/*Show Crafts*/
+const openModal = (craft) => {
+  const modal = document.getElementById("myModal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDescription = document.getElementById("modal-description");
+  const modalSupplies = document.getElementById("modal-supplies");
+  const modalImage = document.getElementById("modal-image");
+
+  modalTitle.innerHTML = `<strong>${craft.name}</strong>`;
+  modalDescription.textContent = craft.description;
+
+  modalSupplies.innerHTML = "<strong>Supplies:</strong>";
+  craft.supplies.forEach((supply) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = supply;
+    modalSupplies.appendChild(listItem);
+  });
+
+  modalImage.src = "https://read-server-json-1.onrender.com/" + craft.img;
+
+  modal.style.display = "block";
+
+  const closeModal = () => {
+    modal.style.display = "none";
+  };
+
+  const closeButton = document.getElementsByClassName("close")[0];
+  closeButton.addEventListener("click", closeModal);
+
+  window.addEventListener("click", (event) => {
+    if (event.target == modal) {
+      closeModal();
+    }
+  });
+};
+
 const showCrafts = async () => {
   const craftsJSON = await getCrafts();
   const columns = document.querySelectorAll(".column");
@@ -40,77 +72,6 @@ const showCrafts = async () => {
       columnIndex++;
       if (columnIndex === columnCount) columnIndex = 0;
       columnHeights[shortestColumnIndex] = 0; 
-    }
-  });
-};
-
-const openModal = (craft) => {
-  const modal = document.getElementById("myModal");
-  const modalTitle = document.getElementById("modal-title");
-  const modalDescription = document.getElementById("modal-description");
-  const modalSupplies = document.getElementById("modal-supplies");
-  const modalImage = document.getElementById("modal-image");
-
-  modalTitle.innerHTML = `<strong>${craft.name}</strong>`;
-  modalDescription.textContent = craft.description;
-
-  modalSupplies.innerHTML = "<strong>Supplies:</strong>";
-  craft.supplies.forEach((supply) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = supply;
-    modalSupplies.appendChild(listItem);
-  });
-
-  modalImage.src = "https://read-server-json-1.onrender.com/" + craft.img;
-
-  modal.style.display = "block";
-
-  const closeModal = () => {
-    modal.style.display = "none";
-  };
-
-  const closeButton = document.getElementsByClassName("close")[0];
-  closeButton.addEventListener("click", closeModal);
-
-  window.addEventListener("click", (event) => {
-    if (event.target == modal) {
-      closeModal();
-    }
-  });
-};
-
-/*Existing Crafts Modal*/
-const openModal = (craft) => {
-  const modal = document.getElementById("myModal");
-  const modalTitle = document.getElementById("modal-title");
-  const modalDescription = document.getElementById("modal-description");
-  const modalSupplies = document.getElementById("modal-supplies");
-  const modalImage = document.getElementById("modal-image");
-
-  modalTitle.innerHTML = `<strong>${craft.name}</strong>`;
-  modalDescription.textContent = craft.description;
-
-  modalSupplies.innerHTML = "<strong>Supplies:</strong>";
-  craft.supplies.forEach((supply) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = supply;
-    modalSupplies.appendChild(listItem);
-  });
-
-  modalImage.src = "https://read-server-json-1.onrender.com/" + craft.img;
-
-  modal.style.display = "block";
-
-  const closeModal = () => {
-    modal.style.display = "none";
-  };
-
-  const closeButton = document.getElementsByClassName("close")[0];
-  closeButton.addEventListener("click", closeModal);
-
-  window.addEventListener("click", (event) => {
-    if (event.target == modal) {
-      closeModal();
     }
   });
 };

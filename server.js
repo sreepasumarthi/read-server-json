@@ -2,13 +2,11 @@ const express = require("express");
 const app = express();
 app.use(express.static("public"));
 
-
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
-
-app.get("/api/crafts", (req,res)=>{
+app.get("/api/crafts", (req, res) => {
     console.log("Someone is requesting our api");
     const crafts = [];
     crafts[0] = {
@@ -277,11 +275,6 @@ app.get("/api/crafts", (req,res)=>{
     res.json(crafts);
 });
 
-
-
-
-
-
-app.listen(3030,()=>{
+app.listen(3030, () => {
     console.log("listening");
 });
